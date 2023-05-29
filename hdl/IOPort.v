@@ -3,7 +3,7 @@
 // Company: 
 // Engineer: 
 // 
-// Create Date:    12:02:18 03/27/2017 
+// Create Date:    
 // Design Name: 
 // Module Name:    ioport 
 // Project Name: 
@@ -14,7 +14,7 @@
 // Dependencies: 
 //
 // Revision: 
-// Revision 0.01 - File Created
+// Revision 0.02 - Fixed for 1551
 // Additional Comments: 
 //
 //////////////////////////////////////////////////////////////////////////////////
@@ -30,16 +30,16 @@ module ioport(
              );
 
 register       reg_ddr(
-                       clock, 
+                       (!we_ddr | !clock), 
                        reset, 
-                       we_ddr, 
+                       1, 
                        data_in, 
                        data_ddr
                       );
 register	      reg_a(
-                     clock, 
+                     (!we_port | !clock), 
                      reset, 
-                     we_port, 
+                     1, 
                      data_in, 
                      data_port
                     );

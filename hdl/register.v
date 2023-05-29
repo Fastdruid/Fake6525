@@ -33,7 +33,7 @@ output [WIDTH-1:0] q;
 reg [WIDTH-1:0] q;
 initial q = RESET;
 
-always @ (negedge clock, posedge reset)
+always @ (posedge clock, posedge reset)
   begin
   if(reset)
 		q <= RESET;

@@ -3,7 +3,7 @@
 // Company: 
 // Engineer: 
 // 
-// Create Date:    11:55:37 06/26/2018 
+// Create Date:    
 // Design Name: 
 // Module Name:    Fake6523 
 // Project Name: 
@@ -14,7 +14,7 @@
 // Dependencies: 
 //
 // Revision: 
-// Revision 0.01 - File Created
+// Revision 0.02 - Fixed for 1551
 // Additional Comments: 
 //
 //////////////////////////////////////////////////////////////////////////////////
@@ -30,17 +30,63 @@ module Fake6523(
                );
 
 reg [7:0]data_out;
-wire clock =   !_cs;
+reg [2:0] rs_r;
+wire clock = !_cs;
+wire [7:0] data_ddr_a;
+wire [7:0] data_ddr_b;
+wire [7:0] data_ddr_c;
 
-ioport         ioport_a(clock, !_reset, data, (!_cs & !_write & (rs == 3)), data_ddr_a, (!_cs & !_write & (rs == 0)), data_port_a, port_a);
-ioport         ioport_b(clock, !_reset, data, (!_cs & !_write & (rs == 4)), data_ddr_b, (!_cs & !_write & (rs == 1)), data_port_b, port_b);
-ioport         ioport_c(clock, !_reset, data, (!_cs & !_write & (rs == 5)), data_ddr_c, (!_cs & !_write & (rs == 2)), data_port_c, port_c);
+wire we_ddr_a;
+wire we_ddr_b;
+wire we_ddr_c;
+wire we_port_a;
+wire we_port_b;
+wire we_port_c;
 
-assign data =  (clock & !_cs & _write ? data_out : 8'bz);
+assign we_ddr_a = !_write & (rs_r == 3'd3);
+assign we_ddr_b = !_write & (rs_r == 3'd4);
+assign we_ddr_c = !_write & (rs_r == 3'd5);
+assign we_port_a = !_write & (rs_r == 3'd0);
+assign we_port_b = !_write & (rs_r == 3'd1);
+assign we_port_c = !_write & (rs_r == 3'd2);
 
-always @(*)
+ioport         ioport_a(
+								.clock(clock), 
+								.reset(!_reset), 
+								.data_in(data), 
+								.we_ddr(we_ddr_a), 
+								.data_ddr(data_ddr_a), 
+								.we_port(we_port_a), 
+								.pins(port_a)
+								);
+								
+ioport         ioport_b(
+								.clock(clock), 
+								.reset(!_reset), 
+								.data_in(data), 
+								.we_ddr(we_ddr_b), 
+								.data_ddr(data_ddr_b), 
+								.we_port(we_port_b), 
+								.pins(port_b)
+								);
+								
+ioport         ioport_c(
+								.clock(clock), 
+								.reset(!_reset), 
+								.data_in(data), 
+								.we_ddr(we_ddr_c), 
+								.data_ddr(data_ddr_c), 
+								.we_port(we_port_c), 
+								.pins(port_c)
+								);
+
+
+assign data =  (!_cs & _write ? data_out : 8'bz);
+
+always @(posedge clock)
 begin
-   case(rs)
+   rs_r = rs;
+	case(rs_r)
       0: data_out = port_a;
       1: data_out = port_b;
       2: data_out = port_c;
