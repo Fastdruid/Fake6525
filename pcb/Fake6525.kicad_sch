@@ -1,65 +1,127 @@
-(kicad_sch (version 20230121) (generator eeschema)
-
-  (uuid 18f69951-f40c-4bae-af51-326edd25d952)
-
-  (paper "A4")
-
-  (lib_symbols
-  )
-
-
-  (sheet (at 127 25.4) (size 12.7 3.81) (fields_autoplaced)
-    (stroke (width 0) (type solid))
-    (fill (color 0 0 0 0.0000))
-    (uuid 3bd3bbab-354b-4a59-853b-90fd2e225818)
-    (property "Sheetname" "POWER" (at 127 24.6884 0)
-      (effects (font (size 1.27 1.27)) (justify left bottom))
-    )
-    (property "Sheetfile" "POWER.kicad_sch" (at 127 29.7946 0)
-      (effects (font (size 1.27 1.27)) (justify left top))
-    )
-    (instances
-      (project "Fake6523"
-        (path "/18f69951-f40c-4bae-af51-326edd25d952" (page "3"))
-      )
-    )
-  )
-
-  (sheet (at 25.4 25.4) (size 12.7 3.81) (fields_autoplaced)
-    (stroke (width 0) (type solid))
-    (fill (color 0 0 0 0.0000))
-    (uuid 7aeec89d-4317-4429-bbf8-83fb85160e03)
-    (property "Sheetname" "LOGIC" (at 25.4 24.6884 0)
-      (effects (font (size 1.27 1.27)) (justify left bottom))
-    )
-    (property "Sheetfile" "LOGIC.kicad_sch" (at 25.4 29.7946 0)
-      (effects (font (size 1.27 1.27)) (justify left top))
-    )
-    (instances
-      (project "Fake6523"
-        (path "/18f69951-f40c-4bae-af51-326edd25d952" (page "1"))
-      )
-    )
-  )
-
-  (sheet (at 76.2 25.4) (size 12.7 3.81) (fields_autoplaced)
-    (stroke (width 0) (type solid))
-    (fill (color 0 0 0 0.0000))
-    (uuid e5ac6665-7d39-4450-b754-32e9a89acc7b)
-    (property "Sheetname" "IO" (at 76.2 24.6884 0)
-      (effects (font (size 1.27 1.27)) (justify left bottom))
-    )
-    (property "Sheetfile" "IO.kicad_sch" (at 76.2 29.7946 0)
-      (effects (font (size 1.27 1.27)) (justify left top))
-    )
-    (instances
-      (project "Fake6523"
-        (path "/18f69951-f40c-4bae-af51-326edd25d952" (page "2"))
-      )
-    )
-  )
-
-  (sheet_instances
-    (path "/" (page "1"))
-  )
+(kicad_sch
+	(version 20231120)
+	(generator "eeschema")
+	(generator_version "8.0")
+	(uuid "18f69951-f40c-4bae-af51-326edd25d952")
+	(paper "A4")
+	(lib_symbols)
+	(sheet
+		(at 127 25.4)
+		(size 12.7 3.81)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "3bd3bbab-354b-4a59-853b-90fd2e225818")
+		(property "Sheetname" "POWER"
+			(at 127 24.6884 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "POWER.kicad_sch"
+			(at 127 29.7946 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "Fake6525"
+				(path "/18f69951-f40c-4bae-af51-326edd25d952"
+					(page "3")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 25.4 25.4)
+		(size 12.7 3.81)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "7aeec89d-4317-4429-bbf8-83fb85160e03")
+		(property "Sheetname" "LOGIC"
+			(at 25.4 24.6884 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "LOGIC.kicad_sch"
+			(at 25.4 29.7946 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "Fake6525"
+				(path "/18f69951-f40c-4bae-af51-326edd25d952"
+					(page "1")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 76.2 25.4)
+		(size 12.7 3.81)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "e5ac6665-7d39-4450-b754-32e9a89acc7b")
+		(property "Sheetname" "IO"
+			(at 76.2 24.6884 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "IO.kicad_sch"
+			(at 76.2 29.7946 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "Fake6525"
+				(path "/18f69951-f40c-4bae-af51-326edd25d952"
+					(page "2")
+				)
+			)
+		)
+	)
+	(sheet_instances
+		(path "/"
+			(page "1")
+		)
+	)
 )
